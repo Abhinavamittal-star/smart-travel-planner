@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { AuthProvider } from "@/context/AuthContext";
@@ -17,7 +17,7 @@ const NotFound = React.lazy(() => import("@/pages/not-found"));
 function App() {
   return (
     <TooltipProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+      <HashRouter>
         <AuthProvider>
           <TripProvider>
             <Suspense fallback={<div className="h-screen w-full flex items-center justify-center">Loading...</div>}>
@@ -36,7 +36,7 @@ function App() {
             </Suspense>
           </TripProvider>
         </AuthProvider>
-      </BrowserRouter>
+      </HashRouter>
       <Toaster />
     </TooltipProvider>
   );
