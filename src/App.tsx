@@ -1,3 +1,4 @@
+// TravelKit - Smart Travel Planner
 import React, { Suspense } from "react";
 import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
